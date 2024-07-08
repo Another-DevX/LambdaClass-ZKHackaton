@@ -7,12 +7,20 @@ use risc0_zkvm::{
 use alloy_sol_types::{sol, SolValue};
 
 
-
 sol! {
-    interface IERC20 {
-        function balanceOf(address account) external view returns (uint);
+    /// YTP balance function signature.
+    interface IYTP {
+        function getBalance(address user) external view returns (uint);
     }
 }
+
+
+const CALL: IYTP::balanceOfCall = IYTP::balanceOfCall {
+    account: address!("9737100D2F42a196DE56ED0d1f6fF598a250E7E4"),
+};
+
+const CONTRACT: Address = address!("Fb5C5dF867c3798710A7135a1D75CF0c6eb45132");
+
 
 
 
