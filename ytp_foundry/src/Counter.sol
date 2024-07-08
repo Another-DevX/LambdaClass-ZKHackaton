@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {IERC20} from "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
 
 contract CollateralDeposit {
 
@@ -11,7 +11,8 @@ contract CollateralDeposit {
     event CollateralDeposit(
         address indexed sender, 
         uint256 amount, 
-        uint256 totalOfCollateralDeposited
+        uint256 totalOfCollateralDeposited,
+        uint256 blockNumber
     );
 
     event Withdrawal(
@@ -30,7 +31,7 @@ contract CollateralDeposit {
         IERC20(collateralToken).transferFrom(msg.sender, address(this), _amount);
 
         collateralValue[msg.sender] += _amount;
-        emit CollateralDeposit(msg.sender, _amount, collateralValue[msg.sender]);
+        emit CollateralDeposit(msg.sender, _amount, collateralValue[msg.sender], block.number);
     }
 
     function getBalance(address user) public view returns (uint){

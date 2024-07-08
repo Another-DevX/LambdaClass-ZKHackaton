@@ -1,3 +1,9 @@
 [submodule "ytp_foundry/lib/forge-std"]
 	path = ytp_foundry/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "ytp_foundry/lib/openzeppelin-contracts"]
+	path = ytp_foundry/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "ytp_foundry/lib/turbo-zksync-demo"]
+	path = ytp_foundry/lib/turbo-zksync-demo
+	url = https://github.com/HerodotusDev/turbo-zksync-demo
