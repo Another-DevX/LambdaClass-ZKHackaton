@@ -8,3 +8,7 @@ risc0-build = { version = "1.0.1" }
 
 [package.metadata.risc0]
 methods = ["guest"]
+
+[dependencies]
+core = { path = "../core" }
+
