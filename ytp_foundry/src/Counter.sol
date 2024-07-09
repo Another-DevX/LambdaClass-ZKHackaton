@@ -8,7 +8,7 @@ contract CollateralDeposit {
     address constant collateralToken = 0xa0289cBbEB673b8787C9C61Bf03914068A033651;
     mapping(address => uint256) collateralValue;
 
-    event CollateralDeposit(
+    event Deposit(
         address indexed sender, 
         uint256 amount, 
         uint256 totalOfCollateralDeposited,
@@ -31,7 +31,7 @@ contract CollateralDeposit {
         IERC20(collateralToken).transferFrom(msg.sender, address(this), _amount);
 
         collateralValue[msg.sender] += _amount;
-        emit CollateralDeposit(msg.sender, _amount, collateralValue[msg.sender], block.number);
+        emit Deposit(msg.sender, _amount, collateralValue[msg.sender], block.number);
     }
 
     function getBalance(address user) public view returns (uint){

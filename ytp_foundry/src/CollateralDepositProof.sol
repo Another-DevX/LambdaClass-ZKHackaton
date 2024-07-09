@@ -4,7 +4,7 @@ pragma solidity ^0.8.19;
 
 import {ITurboSwap, HeaderProperty} from "turbo-zksync-demo/src/turbo/interfaces/ITurboSwap.sol";
 
-contract CollateralDeposit {
+contract CollateralDepositProof {
 
     ITurboSwap public turboSwap;
     mapping(uint256 => mapping(uint256 => mapping(HeaderProperty => bytes32)))
