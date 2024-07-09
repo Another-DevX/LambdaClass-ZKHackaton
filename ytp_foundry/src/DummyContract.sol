@@ -8,9 +8,9 @@ contract DummyContract {
     function getLend(address user, uint256 lendId)
         public
         view
-        returns (uint256 value)
+        returns (uint256)
     {
-        value = lends[user][lendId];
+        return  lends[user][lendId];
     }
 
     function createLend(uint256 amount) public {

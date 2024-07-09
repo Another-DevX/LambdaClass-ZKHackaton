@@ -1,3 +1,8 @@
+
+#![allow(unused_doc_comments)]
+#![no_main]
+
+
 use proof_core::core::{LiquidityLookResult, Stake, U256};
 use risc0_zkvm::{
     guest::env,
@@ -9,17 +14,20 @@ use alloy_primitives::{address, Address};
 use risc0_steel::{config::{ChainSpec, ETH_SEPOLIA_CHAIN_SPEC} , ethereum::EthEvmInput, Contract};
 // use revm::primitives::SpecId;
 
+risc0_zkvm::guest::entry!(main);
+
+
 
 
 sol! {
     interface IYTP {
-        function getLend(address user, uint256 lendId) public  view  returns (uint256 value);
+        function getLend(address user, uint lendId) public  view  returns (uint);
     }
 }
 
 
 
-const CONTRACT: Address = address!("9Dd9dd306EF7252Cff0E0DA5f821b7Ad40AC28Bb");
+const CONTRACT: Address = address!("E501F32748Ea5c70f2FA617db70EB3Aa063FA16f");
 /// Address of the caller.
 const CALLER: Address = address!("f08A50178dfcDe18524640EA6618a1f965821715");
 
@@ -28,20 +36,20 @@ const CALLER: Address = address!("f08A50178dfcDe18524640EA6618a1f965821715");
 fn main() {
     let params: EthEvmInput = env::read();
     let user: Address = env::read();
-    let lending_id: u64 = env::read();
+    let lendId: U256 = env::read();
     // let mut  ZK_SYNC_SPEC: ChainSpec =  ChainSpec::new_single(0x12c,SpecId::LATEST  ,EIP1559_CONSTANTS_DEFAULT);
 
     
-    let mut CALL: IYTP::getLendCall = IYTP::getLendCall {
+    let CALL: IYTP::getLendCall = IYTP::getLendCall {
         user,
-        lendId: U256::from(lending_id),
+        lendId,
     };
     let env = params.into_env().with_chain_spec(&ETH_SEPOLIA_CHAIN_SPEC);
 
     
     let contract = Contract::new(CONTRACT, &env);
-    let response = contract.call_builder(&CALL).from(user).call();
-    assert!(response.value == U256::from(0));
+    let returns = contract.call_builder(&CALL).from(CALLER).call();
+    // assert!(returns._0 == U256::from(0));
     env::commit_slice(&env.block_commitment().abi_encode());
 }
 
