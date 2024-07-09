@@ -16,4 +16,10 @@ This approach improves the user experience and eliminates the need for potential
 We are using [Herodotus - Turbo](https://docs.herodotus.dev/herodotus-docs/developers/turbo) in our [CollateralDepositProof Contract](./ytp_foundry/src/CollateralDepositProof.sol) that is deployed on ZkSync to check if the user that want to receive a loan makes a deposit on L1
 if this proof is valid We give funds to the user.
 
-When the user wants to recover their assets on Ethereum, they repay their loan. We generate a proof with Risc Zero that the user has completed the repayment, and post it to Aligned for validation. This allows the assets to be recovered on the Ethereum mainnet.
+When the user wants to recover their assets on Ethereum, they repay their loan. We generate a proof with [Risc Zero](https://www.risczero.com/get-started) that the user has completed the repayment, and post it to [Aligned](https://docs.alignedlayer.com/) for validation. This allows the assets to be recovered on the Ethereum mainnet.
+
+## Details
+
+[zkSync Sepolia Contract](https://sepolia.explorer.zksync.io/address/0x8F04b1Bc12B8FEE3Bd748E035020cD21CBb691E9#contract)
+
+[Ethereum Sepolia Contract](https://sepolia.etherscan.io/tx/0xcfa746e8fd5040d4a8d20ba2be34fa69dc6e53f9a306a8dff922e849d54fcfc8)
