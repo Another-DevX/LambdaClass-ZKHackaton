@@ -33,8 +33,8 @@ fn main() {
 
     
     let mut CALL: IYTP::getLendCall = IYTP::getLendCall {
-        user: address!("9737100D2F42a196DE56ED0d1f6fF598a250E7E4"),
-        lendId: U256::from(1),
+        user,
+        lendId: U256::from(lending_id),
     };
     let env = params.into_env().with_chain_spec(&ZK_SYNC_SPEC);
 
