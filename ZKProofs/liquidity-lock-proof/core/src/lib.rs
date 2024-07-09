@@ -1,5 +1,6 @@
 pub mod core {
-    pub use ethers_core::types::{Address, U256};
+    pub use alloy_primitives::{Address, U256};
+
 
     pub use risc0_zkp::core::digest::Digest;
     use serde::{Deserialize, Serialize};
