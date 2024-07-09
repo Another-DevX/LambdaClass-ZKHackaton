@@ -23,3 +23,10 @@ When the user wants to recover their assets on Ethereum, they repay their loan. 
 [zkSync Sepolia Contract](https://sepolia.explorer.zksync.io/address/0x8F04b1Bc12B8FEE3Bd748E035020cD21CBb691E9#contract)
 
 [Ethereum Sepolia Contract](https://sepolia.etherscan.io/tx/0xcfa746e8fd5040d4a8d20ba2be34fa69dc6e53f9a306a8dff922e849d54fcfc8)
+
+Execute proof:
+
+```curl
+cd ZKProofs/repay-proof-RPC-SEPOLIA
+RPC_URL=https://eth-sepolia.g.alchemy.com/v2/dhPay_DP_SCx1clkQQD9iJcSNQ0hC_1n  RUST_LOG=info BONSAI_API_KEY=H8MPWMtRlY6TwKU9Jom7u8OSjWk8j08G2eCOCSJ0 BONSAI_API_URL=https://api.bonsai.xyz/   cargo run --release
+```
