@@ -6,6 +6,19 @@ edition = "2021"
 [dependencies]
 methods = { path = "../methods" }
 proof_core = { path = "../core" }
-risc0-zkvm = { version = "1.0.1" }
+risc0-zkvm = { version = "1.0" }
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 serde = "1.0"
+risc0-steel ={version = "0.11.1", features = ['host']}
+
+alloy-primitives = { version = "0.7", features = ["serde", "rlp", "std"] }
+alloy-sol-types = { version = "0.7" }
+clap = { version = "4.4", features = ["derive", "env"] }
+anyhow = "1.0"
+alloy-rlp = { version = "0.3.4", default-features = false }
+alloy-rlp-derive = { version = "0.3.4", default-features = false }
+ethers-core = "2.0"
+ethers-providers = "2.0"
+revm = { version = "9.0" , default-features = false, features = ['std'] }
+
+

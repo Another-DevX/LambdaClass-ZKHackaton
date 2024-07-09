@@ -1,3 +1,4 @@
+
 # RISC Zero Rust Starter Template
 
 Welcome to the RISC Zero Rust Starter Template! This template is intended to
