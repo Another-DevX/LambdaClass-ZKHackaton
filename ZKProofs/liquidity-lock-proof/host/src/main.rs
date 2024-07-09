@@ -67,8 +67,8 @@ fn main() -> Result<()> {
     let mut ZK_SYNC_SPEC: ChainSpec =  ChainSpec::new_single(0x12c,SpecId::LATEST  ,EIP1559_CONSTANTS_DEFAULT);
   
     let CALL: IYTP::getLendCall = IYTP::getLendCall {
-        user: address!("9737100D2F42a196DE56ED0d1f6fF598a250E7E4"),
-        lendId: U256::from(1),
+        user: args.account,
+        lendId: U256::from(args.lend_id),
     };
     
     // Create an EVM environment from an RPC endpoint and a block number. If no block number is
@@ -83,7 +83,7 @@ fn main() -> Result<()> {
 
     let mut contract = Contract::preflight(CONTRACT, &mut env);
 
-    let returns = contract.call_builder(&CALL).from(CALLER).call()?;
+    let returns = contract.call_builder(&CALL).from(args.account).call()?;
     println!(
         "For block {} `{}` returns: {}",
         env.header().number(),

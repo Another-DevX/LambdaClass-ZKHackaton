@@ -40,7 +40,7 @@ fn main() {
 
     
     let contract = Contract::new(CONTRACT, &env);
-    let response = contract.call_builder(&CALL).call();
+    let response = contract.call_builder(&CALL).from(user).call();
     assert!(response.value == U256::from(0));
     env::commit_slice(&env.block_commitment().abi_encode());
 }
