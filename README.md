@@ -22,6 +22,8 @@ When the user wants to recover their assets on Ethereum, they repay their loan. 
 
 [zkSync Sepolia Contract](https://sepolia.explorer.zksync.io/address/0x8F04b1Bc12B8FEE3Bd748E035020cD21CBb691E9#contract)
 
+<https://sepolia.explorer.zksync.io/address/0xd101F46B9532183c8E54bd22eAdFe8A48De8C08D>
+
 [Ethereum Sepolia Contract](https://sepolia.etherscan.io/tx/0xcfa746e8fd5040d4a8d20ba2be34fa69dc6e53f9a306a8dff922e849d54fcfc8)
 
 Execute proof:
