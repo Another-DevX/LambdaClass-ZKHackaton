@@ -11,7 +11,7 @@ This approach improves the user experience and eliminates the need for potential
 
 ## How We Do
 
-![YTPP](./ytp-diagram.jpeg)
+![YTPP](./assets/ytp-diagram.jpeg)
 
 We are using [Herodotus - Turbo](https://docs.herodotus.dev/herodotus-docs/developers/turbo) in our [CollateralDepositProof Contract](./ytp_foundry/src/CollateralDepositProof.sol) that is deployed on ZkSync to check if the user that want to receive a loan makes a deposit on L1
 if this proof is valid We give funds to the user.
@@ -32,3 +32,9 @@ Execute proof:
 cd ZKProofs/repay-proof-RPC-SEPOLIA
 RPC_URL=https://eth-sepolia.g.alchemy.com/v2/dhPay_DP_SCx1clkQQD9iJcSNQ0hC_1n  RUST_LOG=info BONSAI_API_KEY=H8MPWMtRlY6TwKU9Jom7u8OSjWk8j08G2eCOCSJ0 BONSAI_API_URL=https://api.bonsai.xyz/   cargo run --release
 ```
+
+**Because zkSync Sepolia give us this error:
+
+![zkSyn Error](./assets/zkSyncError.jpeg)
+
+We have to use Ethereum Spolia
